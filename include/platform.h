@@ -10,7 +10,7 @@ enum PlatformType {
 	PlatformTypeChannel,	//180x180 64-color circular
 	PlatformTypeDelta,		//144x168 2-color rectangle
 	PlatformTypeEstuary,	//200x228 64-color rectangle
-	PlatformTypeFjord		//variable
+	PlatformTypeFjord		//default platform for brook
 }
 
 #define BROOK_PLATFORM_TYPE_CURRENT PlatformTypeFjord
