@@ -1,0 +1,10 @@
+#ifndef _CONNECTION_SERVICE_PCOMPAT_H_
+#include "event/connection_service.h"
+
+#define pebble_app_connection_handler app_connection_handler
+#define pebblekit_connection_handler kit_connection_handler
+#define connection_service_peek_pebble_app_connection connection_service_peek_app_connection
+#define connection_service_peek_pebblekit_connection connection_service_peek_pebblekit_connection
+
+#define _CONNECTION_SERVICE_PCOMPAT_H_
+#endif
