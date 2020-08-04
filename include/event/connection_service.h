@@ -3,10 +3,10 @@
 
 typedef void(* ConnectionHandler)( bool connected );
 
-struct ConnectionHandlers {
+typedef struct ConnectionHandlers {
 	ConnectionHandler app_connection_handler;
 	ConnectionHandler kit_connection_handler;
-}
+} ConnectionHandlers;
 
 bool connection_service_peek_app_connection( void );
 bool connection_service_peek_kit_connection( void );

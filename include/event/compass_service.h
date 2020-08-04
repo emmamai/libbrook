@@ -4,18 +4,19 @@
 
 typedef int32_t CompassHeading;
 
-enum CompassStatus {
+typedef enum CompassStatus {
 	CompassStatusUnavailable,
 	CompassStatusDataInvalid,
 	CompassStatusCalibrating,
 	CompassStatusCalibrated
-}
-struct CompassHeadingData {
+} CompassStatus;
+
+typedef struct CompassHeadingData {
 	CompassHeading magnetic_heading;
 	CompassHeading true_heading;
 	CompassStatus compass_status;
 	bool is_declination_valid;
-}
+} CompassHeadingData;
 
 typedef void(* CompassHeadingHandler)( CompassHeadingData heading );
 

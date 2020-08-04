@@ -1,7 +1,7 @@
 /* This one's a bit big. Missing convenience macros, those will need put in sometime. */
 #ifndef _HEALTH_SERVICE_H_
 
-enum HealthMetric {
+typedef enum HealthMetric {
 	HealthMetricStepCount,
 	HealthMetricActiveSeconds,
 	HealthMetricWalkedDistanceMeters,
@@ -11,58 +11,66 @@ enum HealthMetric {
 	HealthMetricActiveKCalories,
 	HealthMetricHeartRateBPM,
 	HealthMetricHeartRateRawBPM
-}
-enum HealthServiceTimeScope {
+} HealthMetric;
+
+typedef enum HealthServiceTimeScope {
 	HealthServiceTimeScopeOnce,
 	HealthServiceTimeScopeWeekly,
 	HealthServiceTimeScopeDailyWeekdayOrWeeekend,
 	HealthServiceTimeScopeDaily
-}
-enum HealthAggregation {
+} HealthServiceTimeScope;
+
+typedef enum HealthAggregation {
 	HealthAggregationSum,
 	HealthAggregationAvg,
 	HealthAggregationMin,
 	HealthAggregationMax
-}
-enum HealthActivity {
+} HealthAggregation;
+
+typedef enum HealthActivity {
 	HealthActivityNone,
 	HealthActivitySleep,
 	HealthActivityRestfulSleep,
 	HealthActivityWalk,
 	HealthActivityRun,
 	HealthActivityOpenWorkout
-}
-enum HealthIterationDirection {
+} HealthActivity;
+
+typedef enum HealthIterationDirection {
 	HealthIterationDirectionPast,
 	HealthIterationDirectionFuture
-}
-enum HealthServiceAccessibilityMask {
+} HealthIterationDirection;
+
+typedef enum HealthServiceAccessibilityMask {
 	HealthServiceAccessibilityMaskAvailable,
 	HealthServiceAccessibilityMaskNoPermission,
 	HealthServiceAccessibilityMaskNotSupported,
 	HealthServiceAccessibilityMaskNotAvailable
-}
-enum HealthEventType {
+} HealthServiceAccessibilityMask;
+
+typedef enum HealthEventType {
 	HealthEventSignificantUpdate,
 	HealthEventMovementUpdate,
 	HealthEventSleepUpdate,
 	HealthEventMetricAlert,
 	HealthEventHeartRateUpdate
-}
-enum AmbientLightLevel {
+} HealthEventType;
+
+typedef enum AmbientLightLevel {
 	AmbientLightLevelUnknown,
 	AmbientLightLevelVeryDark,
 	AmbientLightLevelDark,
 	AmbientLightLevelLight,
 	AmbientLightLevelVeryLight
-}
-enum MeasurementSystem {
+} AmbientLightLevel;
+
+typedef enum MeasurementSystem {
 	MeasurementSystemUnknown,
 	MeasurementSystemMetric,
 	MeasurementSystemImperial
-}
+} MeasurementSystem;
 
-struct HealthMinuteData {
+typedef struct HealthMinuteData {
 	uint8_t steps;
 	uint8_t orientation;
 	uint16_t vmc;
@@ -71,7 +79,8 @@ struct HealthMinuteData {
 	uint8_t padding;
 	uint8_t heart_rate_bpm;
 	uint8_t reserved;
-}
+} HealthMinuteData;
+
 typedef struct HealthMetricAlert { /* The contents of this struct aren't explicitly defined in the spec */
 	uint32_t handle;
 } HealthMetricAlert;

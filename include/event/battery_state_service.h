@@ -2,11 +2,11 @@
 
 #ifndef _BATTERY_SERVICE_H_
 
-struct BatteryChargeState {
+typedef struct BatteryChargeState {
 	uint8_t charge_percent;
 	bool is_charging;
 	bool is_unplugged;
-}
+} BatteryChargeState;
 
 typedef void(*BatteryStateHandler)( BatteryChargeState charge );
 
